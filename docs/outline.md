@@ -28,3 +28,10 @@
 - `yarn react react-dom`. Note: `getstorybook` will auto detect if you chose Vue
 - Install the storybook cli `npm install`
 - `getstorybook` - Setups storybook, modifies package.json with scripts and packages
+  - Show changes in package.json
+  - Explain that storybook using `react-create-app` and `webpack` under the hood.
+  - Show created files.
+- Run `yarn storybook`
+ - Quick tour of the ui panes
+ - Show existing demo
+-
