@@ -20,3 +20,11 @@
     - prop management, lifecycles, state, and other goodies
   - Updating our components to use recompose
 - Plug the social medias and thank everyone for listening.
+
+
+## Steps
+
+- `yarn init` the project
+- `yarn react react-dom`. Note: `getstorybook` will auto detect if you chose Vue
+- Install the storybook cli `npm install`
+- `getstorybook` - Setups storybook, modifies package.json with scripts and packages

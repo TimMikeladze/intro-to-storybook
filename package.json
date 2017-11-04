@@ -1,0 +1,32 @@
+{
+  "name": "storybook-intro",
+  "version": "1.0.0",
+  "description": "Intro to storybook",
+  "main": "index.js",
+  "repository": "git@github.com:TimMikeladze/storybook-intro.git",
+  "author": "Tim Mikeladze <tim.mikeladze@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "eslint-plugin-babel": "^4.1.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "jest": "^21.2.1"
+  },
+  "scripts": {
+    "lint": "eslint src/ test/ stories/",
+    "test": "jest --forceExit",
+    "test:watch": "jest --watch",
+    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
+    "commit": "git-cz"
+  }
+}
