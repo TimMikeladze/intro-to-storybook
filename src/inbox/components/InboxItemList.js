@@ -3,10 +3,14 @@ import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import InboxItem from './InboxItem';
 
-const styles = {
+const styles = theme => ({
   root: {
+    fontFamily: theme.fonts.primaryFontFamily,
+    fontSize: 16,
+    fontWeight: 300,
+    borderRight: `1px solid ${theme.colors.borderColor}`,
   },
-};
+});
 
 const InboxItemList = ({
   classes,

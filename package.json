@@ -14,7 +14,8 @@
     "react-jss": "^7.2.0",
     "react-stars": "^2.2.5",
     "recompose": "^0.26.0",
-    "roboto-npm-webfont": "^1.0.1"
+    "roboto-npm-webfont": "^1.0.1",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
