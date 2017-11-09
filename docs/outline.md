@@ -1,16 +1,17 @@
 # Outline
 
 - Hi thanks for listening to me.
-- Who here's familiar with Storybook?
+- Who here's familiar with Storybook and/or React.
 - Topics of discussion
  - Storybook
    - What is storybook and why it's useful tool for your development flow?
+   - Storybook setup and demo
    - Writing our first component
-   - Testing components
-   - Writing our second component, this time tests come first
    - Exploring Storybook, what else can you do with it?
     - addons, actions, logging, decorators, etc
     - pimping out storybook
+   - Testing components
+   - Writing our second component, this time tests come first
    - Deploying prototypes
  - React
   - Classes vs functions
@@ -34,4 +35,17 @@
 - Run `yarn storybook`
  - Quick tour of the ui panes
  - Show existing demo
--
+- Break down the code and story book api
+ - `storiesOf`, (name of story group, module where story code lives for live reload / hot module replacement)
+ - `addStory`, (name of story, a function returning a react component)
+- Start writing first component
+ - Show mockup of what we're going to build
+ - Break down the mockup into separate pieces describing each component
+  - List
+  - List item
+  - Item contents
+  - List controls
+  - Root
+- Detour into pimping out storybook
+- Add tests for the component
+ - Snapshot testing

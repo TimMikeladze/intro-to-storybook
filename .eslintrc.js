@@ -12,8 +12,12 @@ module.exports = {
     'jest'
   ],
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'import/no-extraneous-dependencies': 0,
-    'jsx-a11y/accessible-emoji': 0
+    'jsx-a11y/accessible-emoji': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-wrap-multilines': [2, { arrow: false }],
+    'react/forbid-prop-types': [1, { forbid: ['any']} ],
   }
 };

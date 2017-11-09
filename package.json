@@ -10,9 +10,17 @@
   "dependencies": {
     "eslint-plugin-babel": "^4.1.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-jss": "^7.2.0",
+    "react-stars": "^2.2.5",
+    "recompose": "^0.26.0",
+    "roboto-npm-webfont": "^1.0.1"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.14",
+    "@storybook/addon-links": "^3.2.14",
+    "@storybook/react": "^3.2.14",
+    "casual-browserify": "^1.5.12",
     "commitizen": "^2.9.6",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -20,13 +28,10 @@
     "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "jest": "^21.2.1",
-    "@storybook/react": "^3.2.14",
-    "@storybook/addon-actions": "^3.2.14",
-    "@storybook/addon-links": "^3.2.14"
+    "jest": "^21.2.1"
   },
   "scripts": {
-    "lint": "eslint src/ test/ stories/",
+    "lint": "eslint src/ test/ stories/ .storybook",
     "test": "jest --forceExit",
     "test:watch": "jest --watch",
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
