@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import InboxItemList from './InboxItemList';
 import InboxItemContents from './InboxItemContents';
+import LoadingIndicator from './LoadingIndicator';
 
 const styles = theme => ({
   root: {
     fontFamily: theme.fonts.primaryFontFamily,
     minHeight: 760,
+    height: '100%',
   },
   header: {
     padding: 20,
@@ -46,13 +48,23 @@ const styles = theme => ({
   },
   contents: {
   },
+  loading: {
+    padding: 40,
+    display: 'flex',
+    justifyContent: 'center',
+  },
 });
 
 const Inbox = ({
   classes,
+  loading,
   title,
   items,
   contents,
+  selectedId,
+  handleSelect,
+  readStatusMap,
+  handleSetReadStatus,
 }) =>
   <div className={classes.root}>
     <div className={classes.header}>
@@ -66,33 +78,57 @@ const Inbox = ({
         <option value="date">Date</option>
       </select>
     </div>
-    {!isEmpty(items) &&
-      <div className={classes.main}>
-        <div className={classes.items}>
-          <InboxItemList items={items} />
+    {loading
+      ?
+        <div className={classes.loading}>
+          <LoadingIndicator />
         </div>
-        <div className={classes.contents}>
-          <InboxItemContents contents={contents} />
-        </div>
-      </div>
-    }
-    {isEmpty(items) &&
-      <div className={classes.empty}>
-        Inbox is empty.
+      : <div>
+        {!isEmpty(items) &&
+          <div className={classes.main}>
+            <div className={classes.items}>
+              <InboxItemList
+                items={items}
+                selectedId={selectedId}
+                handleSelect={handleSelect}
+                readStatusMap={readStatusMap}
+                handleSetReadStatus={handleSetReadStatus}
+              />
+            </div>
+            <div className={classes.contents}>
+              <InboxItemContents
+                contents={contents}
+              />
+            </div>
+          </div>
+        }
+        {isEmpty(items) &&
+          <div className={classes.empty}>
+            Inbox is empty.
+          </div>
+        }
       </div>
     }
   </div>;
 
 Inbox.propTypes = {
   classes: PropTypes.object.isRequired,
+  loading: PropTypes.bool,
   title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.object),
   contents: PropTypes.arrayOf(PropTypes.string),
+  handleSelect: PropTypes.func.isRequired,
+  selectedId: PropTypes.string,
+  readStatusMap: PropTypes.object,
+  handleSetReadStatus: PropTypes.func.isRequired,
 };
 
 Inbox.defaultProps = {
+  loading: false,
   items: [],
   contents: [],
+  selectedId: null,
+  readStatusMap: {},
 };
 
 export default injectSheet(styles)(Inbox);

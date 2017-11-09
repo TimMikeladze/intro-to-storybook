@@ -19,5 +19,8 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-wrap-multilines': [2, { arrow: false }],
     'react/forbid-prop-types': [1, { forbid: ['any']} ],
+    'react/jsx-closing-tag-location': 0,
+    'function-paren-newline': ['error', 'consistent'],
+    'arrow-parens': ['error', 'as-needed'],
   }
 };

@@ -21,8 +21,9 @@ const styles = theme => ({
         ? theme.colors.activeBackgroundColor
         : theme.colors.inactiveBackgroundColor),
     '&:hover': {
-      borderLeft: props => !props.isSelected && `4px solid ${theme.colors.secondaryColor}`,
+      borderLeft: props => `4px solid ${props.isSelected ? theme.colors.primaryColor : theme.colors.secondaryColor}`,
     },
+    cursor: 'pointer',
   },
   isRead: ({
     border: props => `2px solid ${!props.isRead ? theme.colors.primaryColor : theme.colors.secondaryColor}`,
@@ -49,8 +50,8 @@ const InboxItem = ({
   date,
   title,
 }) => (
-  <div className={classes.root} onClick={handleSelect}>
-    <div className={classes.isRead} onClick={handleSetReadStatus} />
+  <div className={classes.root} onClick={() => handleSelect(id)}>
+    <div className={classes.isRead} onClick={event => handleSetReadStatus(event, id, isRead)} />
     <ReactStars
       count={1}
       color1={theme.colors.star}

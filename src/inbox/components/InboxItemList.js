@@ -1,6 +1,7 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 import InboxItem from './InboxItem';
 
 const styles = theme => ({
@@ -15,12 +16,19 @@ const styles = theme => ({
 const InboxItemList = ({
   classes,
   items,
+  selectedId,
+  readStatusMap,
   ...otherProps
 }) =>
   <div className={classes.root}>
     {items.map(item => (
       <div key={`item-${item.id}`}>
-        <InboxItem {...item} {...otherProps} />
+        <InboxItem
+          {...item}
+          {...otherProps}
+          isSelected={item.id === selectedId}
+          isRead={get(readStatusMap, [item.id], item.isRead)}
+        />
       </div>))
     }
   </div>;
@@ -28,10 +36,14 @@ const InboxItemList = ({
 InboxItemList.propTypes = {
   classes: PropTypes.object.isRequired,
   items: PropTypes.arrayOf(PropTypes.object),
+  selectedId: PropTypes.string,
+  readStatusMap: PropTypes.object,
 };
 
 InboxItemList.defaultProps = {
   items: [],
+  selectedId: null,
+  readStatusMap: {},
 };
 
 export default injectSheet(styles)(InboxItemList);
