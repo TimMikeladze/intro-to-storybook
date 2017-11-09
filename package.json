@@ -18,6 +18,9 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
+    "@storybook/addon-console": "^1.0.0",
+    "@storybook/addon-info": "^3.2.14",
+    "@storybook/addon-knobs": "^3.2.14",
     "@storybook/addon-links": "^3.2.14",
     "@storybook/react": "^3.2.14",
     "casual-browserify": "^1.5.12",
@@ -28,7 +31,10 @@
     "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "react-storybook-addon-chapters": "^2.1.0",
+    "react-test-renderer": "^16.0.0",
+    "storybook-host": "^4.1.4"
   },
   "scripts": {
     "lint": "eslint src/ test/ stories/ .storybook",
