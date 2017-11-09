@@ -13,7 +13,7 @@ const styles = theme => ({
     fontFamily: theme.fonts.primaryFontFamily,
     fontSize: 16,
     fontWeight: props => (props.isSelected ? 500 : 400),
-    color: props => props.isSelected && theme.colors.primaryColor,
+    color: props => (props.isSelected ? theme.colors.primaryColor : 'inherit'),
     borderLeft: props => `4px solid ${props.isSelected ? theme.colors.primaryColor : 'transparent'}`,
     borderBottom: `1px solid ${theme.colors.borderColor}`,
     background: props =>
